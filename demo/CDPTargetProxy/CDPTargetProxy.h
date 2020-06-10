@@ -38,12 +38,13 @@
 
 /**
  *  初始化 (解决循环引用，例如计时器)
- *  selector 为 target 所要实现的方法
+ *  target 原target
+ *  selector 为 原target 所要实现的方法
  */
 -(instancetype)initWithTarget:(id)target selector:(SEL)selector;
 
 /**
- *  计时器timer等方法所需传入的 selector
+ *  当CDPTargetProxy作为target传入时所需传入的 selector
  */
 -(void)doSelector;
 
