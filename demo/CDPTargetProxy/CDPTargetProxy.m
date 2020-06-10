@@ -24,7 +24,7 @@
 
 @implementation CDPTargetProxy
 
-//初始化 (解决web引用)
+//初始化 (解决web循环引用)
 -(instancetype)initWithScriptDelegate:(id<WKScriptMessageHandler>)delegate{
     if (self=[super init]) {
         _scriptDelegate=delegate;
@@ -49,7 +49,7 @@
         [_scriptDelegate userContentController:userContentController didReceiveScriptMessage:message];
     }
 }
-//计时器等循环引用方法
+//当YJTargetProxy作为target传入时所需传入的 selector
 -(void)doSelector{
     if (_target&&_selector) {
         if ([_target respondsToSelector:_selector]) {
