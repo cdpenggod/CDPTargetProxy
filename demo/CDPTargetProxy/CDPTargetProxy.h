@@ -24,9 +24,9 @@
 @property (nonatomic,weak) id <WKScriptMessageHandler> scriptDelegate;
 
 /**
- *  初始化 (解决web引用)
+ *  初始化 (解决web循环引用)
  */
--(instancetype)initWithScriptDelegate:(id<WKScriptMessageHandler>)delegate;
+-(instancetype)initWithScriptDelegate:(id <WKScriptMessageHandler> )delegate;
 
 #pragma mark - 计时器等循环引用
 //计时器举例:
